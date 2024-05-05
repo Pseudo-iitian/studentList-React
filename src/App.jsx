@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import Cards from './Components/Cards'
 import { Student } from "./Student"; // Assuming the data is exported from this path.
 import { Popup } from "./Components/Popup";
