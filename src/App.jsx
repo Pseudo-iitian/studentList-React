@@ -80,7 +80,7 @@ function App() {
       <div className={`main mx-auto ${value}`}>
         <div className="card-container p-4 border-4 border-gray-400 mx-auto flex align-middle flex-col">
           <p className="font-bold text-gray-500">
-            {Student.length} list of students
+            {data.length} list of students
           </p>
           {/* <Cards/> */}
           {cardArr}
