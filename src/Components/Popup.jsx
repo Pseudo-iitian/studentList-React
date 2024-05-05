@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-export function Popup({ submit, cardValue }) {
+export function Popup({ submit ,cardValue }) {
   const [formData, setFormData] = useState({
+    photo: "",
     fullName: "",
     age: "",
-    photo: "",
   });
 
   const handleChange = (e) => {
@@ -17,7 +17,22 @@ export function Popup({ submit, cardValue }) {
     })
   }
 
-  console.log(formData)
+  // console.log(formData)
+
+  const handleImageChange = (e) => {
+    setFormData((prev)=>{
+      return {
+        ...prev,
+        photo: e.target.files[0]
+      }
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submit(formData);
+  }
+
 
   return (
     <div
@@ -44,12 +59,14 @@ export function Popup({ submit, cardValue }) {
           />
           <input 
             type="file" 
+            onChange={handleImageChange}
             name="photo"
           />
 
           <button
             className="pl-10 pr-10 pt-2 pb-2 bg-white text-black hover:bg-blue-600 hover:text-white"
-            onClick={submit}>
+            onClick={handleSubmit}
+            >
             Submit
           </button>
 
@@ -63,4 +80,5 @@ export function Popup({ submit, cardValue }) {
 Popup.propTypes = {
   submit: PropTypes.func.isRequired,
   cardValue: PropTypes.string.isRequired,
+  setData: PropTypes.func.isRequired,
 };
