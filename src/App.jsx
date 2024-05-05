@@ -1,7 +1,5 @@
 import { useState } from 'react'
 // import Cards from './Components/Cards'
-import React from 'react'
-import ReactDOM from 'react-dom'
 import { Student } from "./Student"; // Assuming the data is exported from this path.
 
 function App() {
