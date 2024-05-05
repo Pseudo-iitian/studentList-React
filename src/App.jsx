@@ -7,7 +7,7 @@ function App() {
   const [cardArr, setCardArr] = useState(() => Student.map((item, index) => (
     <div
       key={index}
-      className="card flex flex-row gap-4 align-middle p-4"
+      className="card flex flex-col sm:flex-row bg-blue-100 mb-2 gap-4 align-middle p-4 "
     >
       <img
         src={item.photo}
@@ -27,11 +27,13 @@ function App() {
   
   
   return (
-    <div className='card-container mt-28 p-4 border-4 border-gray-400 w-[20%] mx-auto flex align-middle flex-col'>
+    <div className="main mx-auto">
+    <div className='card-container p-4 border-4 border-gray-400 mx-auto flex align-middle flex-col'>
       <p className='font-bold text-gray-500'>{Student.length} list of students</p>
       {/* <Cards/> */}
       {cardArr}
       <div className="button p-4 mt-4 bg-blue-500 text-center cursor-pointer" onClick={reset}>Reset</div>
+    </div>
     </div>
   )
 }
